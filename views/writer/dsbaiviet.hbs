@@ -1,0 +1,67 @@
+<div class="site-section">
+    <div class="container">
+        <div class="row mb-5">
+
+            <div class="col-12 text-center mt-5">
+                {{#each trangthai}}
+                <h2 class="mb-3"><b>Danh Sách Bài</b></h2>
+                {{/each}}
+            </div>
+            <table class="list-table table-hover table">
+                <thead>
+                    <tr class="table-heading">
+                        <td id="stt">STT</td>
+                        <td id="ten-bai-viet">Tên bài viết</td>
+                        <td>Ngày đăng</td>
+                        <td>Chuyên mục</td>
+                        <td>Trạng thái</td>
+                        {{#if isTC}}
+                        <td>Lý do</td>
+                        {{/if}}
+                        <td>Chỉnh sửa bài</td>
+                    </tr>
+                </thead>
+                <tbody>
+                    {{#each Baiviet}}
+                    <tr id="news1" data-href="/{{ChuyenMuc}}/{{idBaiBao}}" class="text-black">
+                        <td><b>{{stt}}</b></td>
+                        <td><b>{{TenBaiBao}}</b></td>
+                        <td><b>{{format NgayDang}}</b></td>
+                        <td><b>{{TenCM}}</b></td>
+                        <td><b>{{trangthai}}</b></td>
+                        {{#if this.isTC}}
+                        <td><b>{{LyDoTuChoi}}</b></td>
+                        {{/if}}
+                        <td>
+                            <b>
+                                {{#if flat}}
+                                <a href="/{{ChuyenMuc}}/{{idBaiBao}}">
+                                    <i class="far fa-eye"></i>
+                                </a>
+                                {{else}}
+                                <a href="/writing/rewrite/{{idBaiBao}}">
+                                    <i class="fas fa-wrench"></i>
+                                </a>
+                                {{/if}}
+                            </b>
+                        </td>
+                    </tr>
+                    {{/each}}
+                </tbody>
+            </table>
+        </div>
+        <div style="color:black !important">
+            <ul class="pagination modal-3">
+                <li><a href="#" class="prev">&laquo</a></li>
+                {{#each this.pages}}
+                {{#if active}}
+                <li><a href="javascript:;" class="active">{{value}}</a></li>
+                {{else}}
+                <li><a href="?page={{value}}">{{value}}</a></li>
+                {{/if}}
+                {{/each}}
+                <li><a href="#" class="next">&raquo;</a></li>
+            </ul>
+        </div>
+    </div>
+</div>
