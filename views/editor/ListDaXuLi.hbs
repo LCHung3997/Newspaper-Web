@@ -17,15 +17,17 @@
                         <div style="margin-bottom:40px" class="col-md-12 text-center text-black">
                             <h2>Danh sách các bài viết đã xử lí</h2>
                         </div>
-                        <div  class="x_content">
+                        <div class="x_content">
                             <table id="table" class="table table-hover text-left">
                                 <thead>
                                     <tr>
                                         <th class="text-center">STT</th>
                                         <th class="text-center">Tên bài viết</th>
-                                        <th class="text-center" style="width:135px">Ngày đăng</th>
+                                        <th class="text-center" style="width:135px">Ngày xuất bản</th>
                                         <th class="text-center" style="width:135px">Chuyên mục</th>
-                                        <th class="text-center" style="width:135px">Trạng thái</th>                                        
+                                        <th class="text-center" style="width:135px">Trạng thái</th>
+                                        <th class="text-center" style="width:135px">Lí do</th>
+
                                         {{!-- <th class="text-center">Option</th> --}}
                                     </tr>
                                 </thead>
@@ -34,9 +36,10 @@
                                     <tr>
                                         <th scope="row">{{stt}}</th>
                                         <td id="name">{{TenBaiBao}}</td>
-                                        <td> {{format NgayDang}}</td>
+                                        <td> {{format NgayXuatBan}}</td>
                                         <td>{{TenCM}}</td>
                                         <td>{{tenTrangThai}}</td>
+                                        <td>{{LyDoTuChoi}}</td>
                                         {{!-- <td style="display:flex; flex-direction:row; justify-content: space-around">
                                             <a href="/editor/detail/{{idBaiBao}}"
                                                 style=" cursor: pointer;border: none; background-color: transparent"><i
